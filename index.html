@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catculus Crisis</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --dark-blue: #00008B;
+            --blue: #0000FF;
+            --medium-blue: #3333FF;
+            --soft-blue: #6666FF;
+            --light-blue: #9999FF;
+            --very-light-blue: #CCCCFF;
+            --gold: #FFD700;
+        }
+        
+        body {
+            font-family: "Raleway", Arial, sans-serif;
+            background-color: var(--very-light-blue);
+            color: var(--dark-blue);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        
+        .text-container {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .moving-text {
+            font-size: 100px;
+            font-weight: bold;
+            display: flex;
+            gap: 20px;
+            white-space: nowrap;
+            animation: moveText 6s linear infinite alternate;
+            text-transform: uppercase;
+        }
+        
+        @keyframes moveText {
+            from {
+                transform: translateX(-5%);
+            }
+            to {
+                transform: translateX(5%);
+            }
+        }
+        
+        .cascade {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            position: absolute;
+        }
+        
+        .cascade div {
+            font-size: 100px;
+            font-weight: bold;
+            color: var(--dark-blue);
+        }
+        
+        .nav-bar {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            z-index: 100;
+        }
+        .nav-bar a {
+            font-family: 'Agrandir', sans-serif;
+            color: var(--dark-blue);
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 8px 12px;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .nav-bar a:hover {
+            color: var(--gold);
+            transform: scale(1.1);
+        }
+        
+        .floating-images {
+            position: absolute;
+            width: 200px;
+            opacity: 0.6;
+            border-radius: 10px;
+            animation: float 4s infinite alternate ease-in-out;
+        }
+        
+        @keyframes float {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(15px);
+            }
+        }
+        
+        .image-1 { top: 10%; left: 15%; }
+        .image-2 { top: 30%; right: 10%; }
+        .image-3 { bottom: 20%; left: 30%; }
+        .image-4 { bottom: 10%; right: 20%; }
+        .image-5 { top: 50%; left: 50%; transform: translateX(-50%); }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="nav-bar">
+    <a href="about.html">About</a>
+    <a href="comic.html">Comic</a>
+    <a href="authors.html">Authors</a>
+    <a href="index.html">Home</a>
+</div>
+
+<!-- Moving Text in Cascade Effect -->
+<div class="text-container">
+    <div class="cascade">
+        <div>Cac</div>
+        <div>Tulus</div>
+        <div>Crisis</div>
+    </div>
+</div>
+
+<!-- Floating Images -->
+<img src="image1.jpg" class="floating-images image-1" alt="Floating Image 1">
+<img src="image2.jpg" class="floating-images image-2" alt="Floating Image 2">
+<img src="image3.jpg" class="floating-images image-3" alt="Floating Image 3">
+<img src="image4.jpg" class="floating-images image-4" alt="Floating Image 4">
+<img src="image5.jpg" class="floating-images image-5" alt="Floating Image 5">
+
+</body>
+</html>
