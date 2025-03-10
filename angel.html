@@ -4,7 +4,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comic - Catculus Crisis</title>
+    <title>Angel - Catculus Crisis</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="styles.css">
@@ -31,7 +31,7 @@
             min-height: 100vh;
         }
 
-        /* Header Section - Consistent with Index Page */
+        /* Header Section */
         .header {
             display: flex;
             align-items: center;
@@ -46,6 +46,7 @@
             box-shadow: 0 4px 10px var(--soft-shadow);
             border-radius: 0 0 20px 20px;
         }
+
         .logo {
             height: 80px;
             margin-right: 2rem;
@@ -54,11 +55,13 @@
         .logo:hover {
             transform: rotate(5deg) scale(1.1);
         }
+
         .nav-bar {
             display: flex;
             gap: 2rem;
             font-weight: bold;
         }
+
         .nav-bar a {
             font-size: 1.5rem;
             font-weight: bold;
@@ -96,47 +99,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        /* Third Image Section */
-        .third {
-            position: relative;
-        }
-
-        .third img.image-box {
-            max-width: 100%;
-            height: auto;
-            object-fit: contain;
-            border-radius: 10px;
-        }
-
-        /* Angel & Baddie Buttons */
-        .svg-button {
-            position: absolute;
-            top: 30%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .svg-button img {
-            width: 80px;
-            height: 80px;
-            transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-
-        .svg-button:hover img {
-            transform: scale(1.2);
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .svg-button.left {
-            left: 10%;
-        }
-
-        .svg-button.right {
-            right: 10%;
         }
 
         /* Navigation Buttons */
@@ -180,6 +142,7 @@
         .dot.active {
             background-color: black;
         }
+
     </style>
 </head>
 
@@ -190,29 +153,19 @@
     <img src="LOGO.png" alt="Catculus Crisis Logo" class="logo">
     <nav class="nav-bar">
         <a href="index.html">Home</a>
-        <a href="comic.html" class="active">Comic</a>
+        <a href="comic.html">Comic</a>
         <a href="authors.html">Authors</a>
         <a href="about.html">About</a>
     </nav>
 </header>
 
-<!-- Comic Slider -->
+<!-- Baddie Path Slider -->
 <div class="slider-container">
     <button class="prev" onclick="changeSlide(-1)">&#9665;</button>
     <div class="slider">
-        <img src="1.png" class="slide active">
-        <img src="2.png" class="slide">
-
-        <!-- Third Image with Angel & Baddie Buttons -->
-        <div class="slide third">
-            <img src="3.png" class="image-box">
-            <button class="svg-button left" onclick="window.location.href='angel.html'">
-                <img src="angel.svg" alt="Angel">
-            </button>
-            <button class="svg-button right" onclick="window.location.href='baddie.html'">
-                <img src="baddie.svg" alt="Baddie">
-            </button>
-        </div>
+        <img src="3a.png" class="slide active">
+        <img src="3b.png" class="slide">
+        <img src="3c.png" class="slide">
     </div>
     <button class="next" onclick="changeSlide(1)">&#9655;</button>
 </div>

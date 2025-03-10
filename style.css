@@ -1,84 +1,79 @@
-body {
-    font-family: "Raleway", Arial, sans-serif;
-    background-color: #A9C6E7;
-    color: white;
-    text-align: center;
-}
-
-.nav-bar {
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 1.5rem; /* Reduced padding */
+    background-color: #E3F2FD;
+    width: 100%;
     position: fixed;
     top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px 0;
-    text-align: center;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 15px 15px;
+    height: 50px; /* Adjusted height to match other sections */
+}
+
+/* Logo */
+.logo {
+    height: 40px; /* Reduce size */
+    margin-right: 1rem;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    display: flex;
+    gap: 1.2rem; /* Reduce gap */
+    font-weight: bold;
 }
 
 .nav-bar a {
-    color: white;
-    padding: 14px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
     text-decoration: none;
-    font-size: 18px;
+    color: #0A0A5A;
+    transition: color 0.3s, transform 0.3s;
+    font-family: 'STIX Two Math', serif;
 }
 
 .nav-bar a:hover {
-    background-color: #555;
+    color: #ff3060;
+    transform: scale(1.1);
 }
 
-.page {
-    padding: 50px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+/* Ensure Proper Alignment on Different Screens */
+@media (max-width: 1024px) {
+    .header {
+        padding: 0.3rem 1rem;
+        height: 45px;
+    }
+
+    .logo {
+        height: 35px;
+    }
+
+    .nav-bar a {
+        font-size: 1rem;
+    }
 }
 
-.about-container {
-    background-color: #D4E4FF;
-    padding: 50px;
-    border-radius: 10px;
-    text-align: center;
-    width: 80%;
-}
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 40px;
+    }
 
-.team {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-}
+    .logo {
+        height: 30px;
+    }
 
-.team-member {
-    text-align: center;
-    width: 250px;
-}
+    .nav-bar {
+        gap: 1rem;
+    }
 
-.team-member img {
-    width: 100%;
-    border-radius: 20px;
-}
-
-.team-member h3 {
-    font-weight: bold;
-    color: #0A0A45;
-}
-
-.team-member p {
-    color: #333;
-}
-
-.back-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #0A0A45;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.back-button:hover {
-    background-color: #555;
+    .nav-bar a {
+        font-size: 1rem;
+    }
 }

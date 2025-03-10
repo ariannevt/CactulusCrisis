@@ -1,151 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catculus Crisis</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --dark-blue: #00008B;
-            --blue: #0000FF;
-            --medium-blue: #3333FF;
-            --soft-blue: #6666FF;
-            --light-blue: #9999FF;
-            --very-light-blue: #CCCCFF;
-            --gold: #FFD700;
+            --dark-blue: #0A0A5A;
+            --background: #CFE6FF;
+            --text-size-large: 6vw;
+            --cute-font: 'STIX Two Math', serif;
+            --hover-color: #ff3060;
+            --soft-shadow: rgba(0, 0, 0, 0.15);
         }
         
         body {
-            font-family: "Raleway", Arial, sans-serif;
-            background-color: var(--very-light-blue);
+            font-family: var(--cute-font), Arial, sans-serif;
+            background: var(--background);
             color: var(--dark-blue);
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            position: relative;
-        }
-        
-        .text-container {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .moving-text {
-            font-size: 100px;
-            font-weight: bold;
-            display: flex;
-            gap: 20px;
-            white-space: nowrap;
-            animation: moveText 6s linear infinite alternate;
-            text-transform: uppercase;
-        }
-        
-        @keyframes moveText {
-            from {
-                transform: translateX(-5%);
-            }
-            to {
-                transform: translateX(5%);
-            }
-        }
-        
-        .cascade {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            position: absolute;
-        }
-        
-        .cascade div {
-            font-size: 100px;
-            font-weight: bold;
-            color: var(--dark-blue);
-        }
-        
-        .nav-bar {
-            position: fixed;
-            top: 20px;
-            right: 30px;
+            margin: 0;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
-            text-align: right;
-            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 3rem;
+            background-color: var(--background);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px var(--soft-shadow);
+            border-radius: 0 0 20px 20px;
+            transition: all 0.3s ease-in-out;
+        }
+        .logo {
+            height: 80px;
+            margin-right: 2rem;
+            transition: transform 0.3s ease-in-out;
+        }
+        .logo:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+        .nav-bar {
+            display: flex;
+            gap: 2rem;
+            font-weight: bold;
         }
         .nav-bar a {
-            font-family: 'Agrandir', sans-serif;
-            color: var(--dark-blue);
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: bold;
             text-decoration: none;
-            padding: 8px 12px;
+            color: var(--dark-blue);
             transition: color 0.3s, transform 0.3s;
+            font-family: var(--cute-font);
         }
         .nav-bar a:hover {
-            color: var(--gold);
-            transform: scale(1.1);
+            color: var(--hover-color);
+            transform: scale(1.1) rotate(-2deg);
         }
-        
-        .floating-images {
-            position: absolute;
-            width: 200px;
-            opacity: 0.6;
-            border-radius: 10px;
-            animation: float 4s infinite alternate ease-in-out;
+
+        /* Responsive Navbar for Mobile */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 1rem;
+                text-align: center;
+            }
+            .logo {
+                height: 60px;
+                margin: 0 auto;
+            }
+            .nav-bar {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            .nav-bar a {
+                font-size: 1.2rem;
+            }
         }
-        
+
+        /* Centered Title with Animated Effects */
+        .text-container {
+            text-align: center;
+            font-size: var(--text-size-large);
+            font-weight: bold;
+            color: var(--dark-blue);
+            font-family: var(--cute-font);
+            text-shadow: 0.4vw 0.4vw 0px var(--soft-shadow);
+            transition: transform 0.3s ease-out;
+            cursor: pointer;
+            padding: 20px;
+            background: none;
+            border-radius: 0;
+            box-shadow: none;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        /* Interactive Animation */
+        .text-container:hover {
+            transform: scale(1.1) rotate(-2deg);
+            color: var(--hover-color);
+        }
+
+        /* Floating Effect */
         @keyframes float {
-            from {
-                transform: translateY(0px);
-            }
-            to {
-                transform: translateY(15px);
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Adjust Text for Mobile Screens */
+        @media (max-width: 768px) {
+            .text-container {
+                font-size: 8vw;
             }
         }
-        
-        .image-1 { top: 10%; left: 15%; }
-        .image-2 { top: 30%; right: 10%; }
-        .image-3 { bottom: 20%; left: 30%; }
-        .image-4 { bottom: 10%; right: 20%; }
-        .image-5 { top: 50%; left: 50%; transform: translateX(-50%); }
+
     </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<div class="nav-bar">
-    <a href="about.html">About</a>
-    <a href="comic.html">Comic</a>
-    <a href="authors.html">Authors</a>
-    <a href="index.html">Home</a>
-</div>
+<!-- Header -->
+<header class="header">
+    <img src="LOGO.png" alt="Catculus Crisis Logo" class="logo">
+    <nav class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="comic.html">Comic</a>
+        <a href="authors.html">Authors</a>
+        <a href="about.html">About</a>
+    </nav>
+</header>
 
-<!-- Moving Text in Cascade Effect -->
+<!-- Centered Title with Interaction -->
 <div class="text-container">
-    <div class="cascade">
-        <div>Cac</div>
-        <div>Tulus</div>
-        <div>Crisis</div>
-    </div>
+    <span class="hover-text">Catculus Crisis</span>
 </div>
 
-<!-- Floating Images -->
-<img src="image1.jpg" class="floating-images image-1" alt="Floating Image 1">
-<img src="image2.jpg" class="floating-images image-2" alt="Floating Image 2">
-<img src="image3.jpg" class="floating-images image-3" alt="Floating Image 3">
-<img src="image4.jpg" class="floating-images image-4" alt="Floating Image 4">
-<img src="image5.jpg" class="floating-images image-5" alt="Floating Image 5">
+<script>
+    // Interactive effect on title
+    document.querySelector('.text-container').addEventListener('mousemove', (e) => {
+        let x = (e.clientX / window.innerWidth) * 5 - 2.5;
+        let y = (e.clientY / window.innerHeight) * 5 - 2.5;
+        e.target.style.transform = `scale(1.05) rotate(${x}deg)`;
+    });
+
+    document.querySelector('.text-container').addEventListener('mouseleave', (e) => {
+        e.target.style.transform = 'scale(1)';
+    });
+</script>
 
 </body>
 </html>
