@@ -252,53 +252,6 @@
 
 </body>
 </html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comic Slider</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1 class="title">Title</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#" class="active">Comic</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Authors</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="slider-container">
-        <button class="prev" onclick="changeSlide(-1)">&#9665;</button>
-        <div class="slider">
-            <img src="images/1.png" class="slide active">
-            <img src="images/2.png" class="slide">
-            <!-- Third image wrapper -->
-            <div class="slide third">
-                <img src="images/3.png" class="image-box">
-                <button class="svg-button left" onclick="svgLeftClick()">
-                    <img src="images/angel.svg" alt="Angel">
-                </button>
-                <button class="svg-button right" onclick="svgRightClick()">
-                    <img src="images/baddie.svg" alt="Baddie">
-                </button>
-            </div>
-        </div>
-        <button class="next" onclick="changeSlide(1)">&#9655;</button>
-    </div>
-
-    <div class="dots">
-        <span class="dot active" onclick="goToSlide(0)"></span>
-        <span class="dot" onclick="goToSlide(1)"></span>
-        <span class="dot" onclick="goToSlide(2)"></span>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>
