@@ -264,3 +264,100 @@ button.next {
 .dot.active {
     background-color: black;
 }
+
+/* Floating Images - Adjust Size */
+.floating {
+    position: absolute;
+    width: 220px; /* Increased size */
+    height: auto;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+/* Position & Size of Individual Floating Images */
+.floating1 { 
+    top: 15%; 
+    left: 5%; 
+    width: 250px; /* Bigger */
+}
+
+.floating2 { 
+    top: 60px; 
+    right: 10%; 
+    width: 270px; /* Even bigger */
+}
+
+.floating3 { 
+    bottom: 20px; 
+    left: 40%; 
+    width: 230px; /* Normal */
+}
+
+.floating4 { 
+    top: 50%; 
+    right: 15%; 
+    width: 260px; /* Slightly bigger */
+}
+
+/* Make Floating Images Responsive on Mobile */
+@media (max-width: 768px) {
+    .floating {
+        width: 150px; /* Reduce size for smaller screens */
+    }
+}
+
+/* Container for the Title */
+.text-container {
+    text-align: center;
+    font-size: 6vw;
+    font-weight: bold;
+    color: var(--dark-blue);
+    font-family: var(--cute-font);
+    text-shadow: 0.4vw 0.4vw 0px var(--soft-shadow);
+    transition: transform 0.3s ease-out;
+    cursor: pointer;
+    padding: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Floating Images - Bigger Size */
+.floating {
+    position: absolute;
+    width: 250px; /* Increased size */
+    height: auto;
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Position Floating Images Around Title */
+.floating1 { 
+    top: -100px; 
+    left: -200px; 
+    width: 280px; /* Bigger */
+}
+
+.floating2 { 
+    top: -80px; 
+    right: -200px; 
+    width: 300px; /* Biggest */
+}
+
+.floating3 { 
+    bottom: -80px; 
+    left: -180px; 
+    width: 260px; 
+}
+
+.floating4 { 
+    bottom: -100px; 
+    right: -180px; 
+    width: 270px; 
+}
+
+/* Make Images Responsive on Mobile */
+@media (max-width: 768px) {
+    .floating {
+        width: 180px; /* Reduce size for mobile */
+    }
+}
