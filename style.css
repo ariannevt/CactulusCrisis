@@ -361,3 +361,62 @@ button.next {
         width: 180px; /* Reduce size for mobile */
     }
 }
+
+/* Centered Title */
+.text-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-size: 6vw;
+    font-weight: bold;
+    color: var(--dark-blue);
+    font-family: var(--cute-font);
+    text-shadow: 0.4vw 0.4vw 0px var(--soft-shadow);
+    transition: transform 0.3s ease-out;
+    padding: 50px;
+}
+
+/* Floating Images - Bigger & Properly Positioned */
+.floating {
+    position: absolute;
+    width: 300px; /* Increased size */
+    height: auto;
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Position Floating Images Around Title */
+.floating1 { 
+    top: -140px;  /* Top Left */
+    left: -240px;  
+    width: 320px; 
+}
+
+.floating2 { 
+    top: -140px;  /* Top Right */
+    right: -240px;  
+    width: 320px;  
+}
+
+.floating3 { 
+    bottom: -140px;  /* Bottom Left */
+    left: -240px;  
+    width: 300px; 
+}
+
+.floating4 { 
+    bottom: -140px;  /* Bottom Right */
+    right: -240px;  
+    width: 300px;  
+}
+
+/* Make Floating Images Responsive on Mobile */
+@media (max-width: 768px) {
+    .floating {
+        width: 180px; /* Reduce size for mobile */
+    }
+    .floating1 { top: -100px; left: -160px; }
+    .floating2 { top: -100px; right: -160px; }
+    .floating3 { bottom: -100px; left: -160px; }
+    .floating4 { bottom: -100px; right: -160px; }
+}

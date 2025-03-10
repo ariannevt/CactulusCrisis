@@ -75,8 +75,10 @@
             transform: scale(1.1) rotate(-2deg);
         }
 
-        /* Centered Title with Animated Effects */
+        /* Title Styling (Original) */
         .text-container {
+            position: relative;
+            display: inline-block;
             text-align: center;
             font-size: var(--text-size-large);
             font-weight: bold;
@@ -84,14 +86,7 @@
             font-family: var(--cute-font);
             text-shadow: 0.4vw 0.4vw 0px var(--soft-shadow);
             transition: transform 0.3s ease-out;
-            cursor: pointer;
-            padding: 20px;
-            background: none;
-            border-radius: 0;
-            box-shadow: none;
-            animation: float 5s infinite ease-in-out;
-            position: relative;
-            z-index: 2;
+            padding: 50px;
         }
 
         /* Interactive Animation */
@@ -107,42 +102,51 @@
             100% { transform: translateY(0px); }
         }
 
-        /* Floating Images */
+        /* Floating Images - Bigger & Properly Positioned */
         .floating {
             position: absolute;
-            width: 100px;
+            width: 300px; /* Increased size */
             height: auto;
-            opacity: 0.8;
+            opacity: 1;
             z-index: 1;
         }
-        .floating1 { top: 15%; left: 5%; }
-        .floating2 { top: 60px; right: 10%; }
-        .floating3 { bottom: 20px; left: 40%; }
-        .floating4 { top: 50%; right: 15%; }
-        
-        /* Responsive Navbar for Mobile */
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                padding: 1rem;
-                text-align: center;
-            }
-            .logo {
-                height: 60px;
-                margin: 0 auto;
-            }
-            .nav-bar {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-            .nav-bar a {
-                font-size: 1.2rem;
-            }
-            .floating {
-                width: 80px; /* Smaller floating images on mobile */
-            }
+
+        /* Position Floating Images Around Title */
+        .floating1 { 
+            top: -140px;  /* Top Left */
+            left: -240px;  
+            width: 320px; 
         }
+
+        .floating2 { 
+            top: -140px;  /* Top Right */
+            right: -240px;  
+            width: 320px;  
+        }
+
+        .floating3 { 
+            bottom: -140px;  /* Bottom Left */
+            left: -240px;  
+            width: 300px; 
+        }
+
+        .floating4 { 
+            bottom: -140px;  /* Bottom Right */
+            right: -240px;  
+            width: 300px;  
+        }
+
+        /* Make Floating Images Responsive on Mobile */
+        @media (max-width: 768px) {
+            .floating {
+                width: 180px; /* Reduce size for mobile */
+            }
+            .floating1 { top: -100px; left: -160px; }
+            .floating2 { top: -100px; right: -160px; }
+            .floating3 { bottom: -100px; left: -160px; }
+            .floating4 { bottom: -100px; right: -160px; }
+        }
+
     </style>
 </head>
 <body>
@@ -158,14 +162,10 @@
     </nav>
 </header>
 
-<!-- Floating Images -->
-
-<img src="lim.png" class="floating floating1">
-<img src="lim2.png" class="floating floating2">
-
-
-<!-- Centered Title with Interaction -->
+<!-- Centered Title with Floating Images -->
 <div class="text-container">
+    <img src="lim.png" class="floating floating1">
+    <img src="lim2.png" class="floating floating2">
     <span class="hover-text">Catculus Crisis</span>
 </div>
 
